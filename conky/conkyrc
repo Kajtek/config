@@ -43,29 +43,34 @@ conky.config = {
 conky.text = [[
 ${color grey}\
 Arch $sysname $kernel $machine
-$nodename
+${color grey}Node:$color $nodename
 ${color grey}Uptime:$color $uptime
-
 $hr
 CPU
 
-${color grey}Usage:$color ${cpu}%
+${color grey}Total usage:$color ${cpu}%
  ${cpugraph}
+${color}CORE 1: ${color1}${cpu cpu1}% ${goto 130}${cpubar cpu1 12,125}  	${goto 270}${color}CORE 5: ${color1}${cpu cpu5}% ${alignr}${cpubar cpu5 12,125} 
+${color}CORE 2: ${color1}${cpu cpu2}% ${goto 130}${cpubar cpu2 12,125}  	${goto 270}${color}CORE 6: ${color1}${cpu cpu6}% ${alignr}${cpubar cpu6 12,125} 
+${color}CORE 3: ${color1}${cpu cpu3}% ${goto 130}${cpubar cpu3 12,125}  	${goto 270}${color}CORE 7: ${color1}${cpu cpu7}% ${alignr}${cpubar cpu7 12,125} 
+${color}CORE 4: ${color1}${cpu cpu4}% ${goto 130}${cpubar cpu4 12,125}  	${goto 270}${color}CORE 8: ${color1}${cpu cpu8}% ${alignr}${cpubar cpu8 12,125}
 $hr
 Memory
 
 ${color grey}Usage:$color ${memperc}% 
  ${memgraph}
-$hr
-File system
-
 ${color grey}Swap usage:$color ${swapperc}% ${swapbar}
-${color grey}/ usage:$color   ${fs_used_perc}% ${fs_bar /}
 $hr
-Disk
+File system /
 
-${color grey}/dev/sda IO:$color ${diskio}/s
-${diskiograph}
+${color grey}Usage:$color   ${fs_used_perc}% ${fs_bar /}
+$hr
+Disk /dev/sda
+
+${color grey}Disk IO:$color ${diskio}/s
+
+${color grey}Read:$color ${diskio_read}/s ${goto 200}${color grey}Write:$color ${diskio_write}/s
+ ${diskiograph_read 24, 160} ${goto 200} ${diskiograph_write 24, 160}
 $hr
 ${color}Networking
 
@@ -83,7 +88,7 @@ ${color} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
 ${color} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
 ${color} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
 ${color} ${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
-
+${color} ${top name 5} ${top pid 5} ${top cpu 5} ${top mem 5}
 $hr
 Conky
 

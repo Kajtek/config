@@ -17,6 +17,5 @@ powerline-config tmux setup
 
 alias ls='ls --color=auto'
 alias ll='ls --color=auto -la'
-alias rsm='cd /home/kajtek/go/src/intel.com/rsm'
 PS1='[\u@\h \W]\$ '
 PATH=$PATH:~/go/bin/

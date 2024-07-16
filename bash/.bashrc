@@ -19,3 +19,6 @@ alias ls='ls --color=auto'
 alias ll='ls --color=auto -la'
 PS1='[\u@\h \W]\$ '
 PATH=$PATH:~/go/bin/
+
+# Enables direnv: https://direnv.net/
+eval "$(direnv hook bash)"
